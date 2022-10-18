@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6BE70CEE-071C-3C71-8442-32128E68B4DF}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>libdlib</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)lib\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\Temp\$(SolutionName)\$(ProjectName)\$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)lib\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\Temp\$(SolutionName)\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\zlib-1.2.12\include;$(SolutionDir)thirdparty\png1637\include;$(SolutionDir)thirdparty\jpeg-9e\include</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_WINDOWS;DLIB_HAVE_SSE2;DLIB_JPEG_SUPPORT;DLIB_PNG_SUPPORT;DLIB__CMAKE_GENERATED_A_CONFIG_H_FILE;DLIB_CHECK_FOR_VERSION_MISMATCH=DLIB_VERSION_MISMATCH_CHECK__EXPECTED_VERSION_19_24_0;ENABLE_ASSERTS</PreprocessorDefinitions>
+    </ClCompile>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <AdditionalLibraryDirectories />
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\zlib-1.2.12\include;$(SolutionDir)thirdparty\png1637\include;$(SolutionDir)thirdparty\jpeg-9e\include</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_WINDOWS;DLIB_HAVE_SSE2;DLIB_JPEG_SUPPORT;DLIB_PNG_SUPPORT;DLIB__CMAKE_GENERATED_A_CONFIG_H_FILE;DLIB_CHECK_FOR_VERSION_MISMATCH=DLIB_VERSION_MISMATCH_CHECK__EXPECTED_VERSION_19_24_0;DLIB_DISABLE_ASSERTS;NDEBUG</PreprocessorDefinitions>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <AdditionalLibraryDirectories />
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="dlib\base64\base64_kernel_1.cpp" />
+    <ClCompile Include="dlib\bigint\bigint_kernel_1.cpp" />
+    <ClCompile Include="dlib\bigint\bigint_kernel_2.cpp" />
+    <ClCompile Include="dlib\bit_stream\bit_stream_kernel_1.cpp" />
+    <ClCompile Include="dlib\entropy_decoder\entropy_decoder_kernel_1.cpp" />
+    <ClCompile Include="dlib\entropy_decoder\entropy_decoder_kernel_2.cpp" />
+    <ClCompile Include="dlib\entropy_encoder\entropy_encoder_kernel_1.cpp" />
+    <ClCompile Include="dlib\entropy_encoder\entropy_encoder_kernel_2.cpp" />
+    <ClCompile Include="dlib\md5\md5_kernel_1.cpp" />
+    <ClCompile Include="dlib\tokenizer\tokenizer_kernel_1.cpp" />
+    <ClCompile Include="dlib\unicode\unicode.cpp" />
+    <ClCompile Include="dlib\test_for_odr_violations.cpp" />
+    <ClCompile Include="dlib\sockets\sockets_kernel_1.cpp" />
+    <ClCompile Include="dlib\bsp\bsp.cpp" />
+    <ClCompile Include="dlib\dir_nav\dir_nav_kernel_1.cpp" />
+    <ClCompile Include="dlib\dir_nav\dir_nav_kernel_2.cpp" />
+    <ClCompile Include="dlib\dir_nav\dir_nav_extensions.cpp" />
+    <ClCompile Include="dlib\gui_widgets\fonts.cpp" />
+    <ClCompile Include="dlib\linker\linker_kernel_1.cpp" />
+    <ClCompile Include="dlib\logger\extra_logger_headers.cpp" />
+    <ClCompile Include="dlib\logger\logger_kernel_1.cpp" />
+    <ClCompile Include="dlib\logger\logger_config_file.cpp" />
+    <ClCompile Include="dlib\misc_api\misc_api_kernel_1.cpp" />
+    <ClCompile Include="dlib\misc_api\misc_api_kernel_2.cpp" />
+    <ClCompile Include="dlib\sockets\sockets_extensions.cpp" />
+    <ClCompile Include="dlib\sockets\sockets_kernel_2.cpp" />
+    <ClCompile Include="dlib\sockstreambuf\sockstreambuf.cpp" />
+    <ClCompile Include="dlib\sockstreambuf\sockstreambuf_unbuffered.cpp" />
+    <ClCompile Include="dlib\server\server_kernel.cpp" />
+    <ClCompile Include="dlib\server\server_iostream.cpp" />
+    <ClCompile Include="dlib\server\server_http.cpp" />
+    <ClCompile Include="dlib\threads\multithreaded_object_extension.cpp" />
+    <ClCompile Include="dlib\threads\threaded_object_extension.cpp" />
+    <ClCompile Include="dlib\threads\threads_kernel_1.cpp" />
+    <ClCompile Include="dlib\threads\threads_kernel_2.cpp" />
+    <ClCompile Include="dlib\threads\threads_kernel_shared.cpp" />
+    <ClCompile Include="dlib\threads\thread_pool_extension.cpp" />
+    <ClCompile Include="dlib\threads\async.cpp" />
+    <ClCompile Include="dlib\timer\timer.cpp" />
+    <ClCompile Include="dlib\stack_trace.cpp" />
+    <ClCompile Include="dlib\cuda\cpu_dlib.cpp" />
+    <ClCompile Include="dlib\cuda\tensor_tools.cpp" />
+    <ClCompile Include="dlib\data_io\image_dataset_metadata.cpp" />
+    <ClCompile Include="dlib\data_io\mnist.cpp" />
+    <ClCompile Include="dlib\data_io\cifar.cpp" />
+    <ClCompile Include="dlib\global_optimization\global_function_search.cpp" />
+    <ClCompile Include="dlib\filtering\kalman_filter.cpp" />
+    <ClCompile Include="dlib\svm\auto.cpp" />
+    <ClCompile Include="dlib\gui_widgets\widgets.cpp" />
+    <ClCompile Include="dlib\gui_widgets\drawable.cpp" />
+    <ClCompile Include="dlib\gui_widgets\canvas_drawing.cpp" />
+    <ClCompile Include="dlib\gui_widgets\style.cpp" />
+    <ClCompile Include="dlib\gui_widgets\base_widgets.cpp" />
+    <ClCompile Include="dlib\gui_core\gui_core_kernel_1.cpp" />
+    <ClCompile Include="dlib\gui_core\gui_core_kernel_2.cpp" />
+    <ClCompile Include="dlib\image_loader\png_loader.cpp" />
+    <ClCompile Include="dlib\image_saver\save_png.cpp" />
+    <ClCompile Include="dlib\image_loader\jpeg_loader.cpp" />
+    <ClCompile Include="dlib\image_saver\save_jpeg.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
